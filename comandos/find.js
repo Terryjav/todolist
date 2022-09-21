@@ -1,16 +1,16 @@
 const tasks = require("../tasksData")
 
 const find = (title) => {
-    //return tasks.find((tasks) => task.title === title);
+    return tasks.find((tasks) => task.title === title);
 
-    for (let i = 0;i < tasks.length; i++) {
+    /*for (let i = 0; i < tasks.length; i++) {
     console.log("i = ", i);
 
-    if (tasks [i]. title === title) {
+    if (tasks [i].title === title) {
         return true;
     }  
  } 
-   return false;
+   return false;  */
 };
 
-module.export = find;
+module.exports = find;

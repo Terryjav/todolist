@@ -1,34 +1,31 @@
-const find = require('./comandos/find');
+const find = require('./comandos/find.js');
 
 const action = process.argv[2];
 
-if(!action) {
-    console.log("Acción inválida");
+if (!action) {
+    console.log("Olvidaste introducir la acción a ejecutar");
     return;
 }
 
+switch (action) {
+    case "find": {
+        const title = process.argv[3];
 
-switch(action) {
+        if (!title) {
+            console.log("Ovidaste introducir el título");
+            break;
+        }
 
-case "find":{
-    const title = process.argv[3];
+        const exists = find(title);
 
-    if(!title) {
-        console.log("Olvidaste introducir el título");
-        break;
-    }
-
-    const exists = find(title);
-
-    console.log("Título: ", title);
-    console.log("Existe: ", exists);
+        console.log("Título: ", title);
+        console.log("Existe: ", exists);
 
     break;
-}
-
+    }
 
     default: {
-        console.log("Acción no definida")
+        console.log("Acción invalida");
         break;
     }
 }
